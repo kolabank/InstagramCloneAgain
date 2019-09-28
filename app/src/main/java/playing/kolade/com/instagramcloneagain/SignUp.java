@@ -1,5 +1,6 @@
 package playing.kolade.com.instagramcloneagain;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     private EditText edtName, edtSpeed, edtPower, edtKickPower, edtKickSpeed;
-    private Button button, btnGetAllData;
+    private Button button, btnGetAllData, btnNextActivity;
     private TextView txtGetData;
     private String allKikboxers;
 
@@ -39,6 +40,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         button = findViewById(R.id.button);
         txtGetData = findViewById(R.id.txtGetData);
         btnGetAllData = findViewById(R.id.btnGetAllData);
+        btnNextActivity = findViewById(R.id.btnNextActivity);
 
         button.setOnClickListener(this);
 
@@ -88,6 +90,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     }
                 });
 
+            }
+        });
+
+        btnNextActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUp.this, fe.class);
             }
         });
     }
